@@ -378,6 +378,7 @@ UM.Dialog
                 UM.Preferences.setValue("BeltPlugin/secondary_fans_enabled", onSecondaryFans.checked);
                 UM.Preferences.setValue("BeltPlugin/secondary_fans_speed", parseFloat(secondaryFansSpeedInput.text));
 
+                manager.resetSlice();
                 base.reject();
             }
         } ,

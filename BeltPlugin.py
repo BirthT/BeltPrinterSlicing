@@ -47,16 +47,16 @@ class BeltPlugin(QObject,Extension):
 
         self._global_container_stack = None
 
-        #環境変数の定義#############################
-        self._preferences.addPreference("BeltPlugin/on_plugin", False) #ベルトスライサーのON:True,OFF:False
+        #Belt Plugin environment variable#############################
+        self._preferences.addPreference("BeltPlugin/on_plugin", False) #Belt Plugin ON:True,OFF:False
 
-        self._preferences.addPreference("BeltPlugin/gantry_angle", 35) #ガントリー角度 (deg)
+        self._preferences.addPreference("BeltPlugin/gantry_angle", 35) 
 
-        self._preferences.addPreference("BeltPlugin/support_gantry_angle_bias", 35) #サポートのバイアス
-        self._preferences.addPreference("BeltPlugin/support_minimum_island_area", 3.0) #サポートの最小サイズ
+        self._preferences.addPreference("BeltPlugin/support_gantry_angle_bias", 35) 
+        self._preferences.addPreference("BeltPlugin/support_minimum_island_area", 3.0) 
 
-        self._preferences.addPreference("BeltPlugin/repetitions", 1) #繰り返し回数
-        self._preferences.addPreference("BeltPlugin/repetitions_distance", 300) #繰り返し時の距離
+        self._preferences.addPreference("BeltPlugin/repetitions", 1) 
+        self._preferences.addPreference("BeltPlugin/repetitions_distance", 300) 
 
         #TODO Allow user to be set
         self._preferences.addPreference("BeltPlugin/repetitions_gcode", "\nG92 E0   ; Set Extruder to zero\nG1 E-4 F3900  ; Retract 4mm at 65mm/s\nG92 Z0   ; Set Belt to zero\nG1 Z{belt_repetitions_distance}   ; Advance belt between repetitions\nG92 Z0   ; Set Belt to zero again\n\n;˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄ - repetition - ˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄\n\nM107    ; Start with the fan off\nG0 X170 ; Move X to the center\nG1 Y1   ; Move y to the belt\nG1 E0   ; Move extruder back to 0\nG92 E-5 ; Add 5mm restart distance\n\n")
@@ -348,3 +348,8 @@ class BeltPlugin(QObject,Extension):
         path = os.path.join(os.path.dirname(os.path.abspath(__file__)),"qml","BeltSettings.qml")
         self._settings_dialog = self._application.createQmlComponent(path, {"manager":self})
         self._settings_dialog.show()
+    
+    @pyqtSlot()
+    def resetSlice(self):
+        _background = self._application.getBackend()
+        _background.backendStateChange.emit(BackendState.NotStarted)
