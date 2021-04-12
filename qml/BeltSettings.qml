@@ -223,7 +223,7 @@ UM.Dialog
                 TextField{
                     id:raftFlowInput
                     text: UM.Preferences.getValue("BeltPlugin/raft_flow")
-                    validator: RegExpValidator { regExp : /([0-9]|[1-9][0-9])(\.[0-9]+)?|100/ }
+                    validator: RegExpValidator { regExp : /[0-9]+\.[0-9]+/ }
                 }
             }
         }
