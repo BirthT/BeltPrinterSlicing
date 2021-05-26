@@ -72,7 +72,7 @@ class BeltPlugin(QObject,Extension):
 
         self._preferences.addPreference("BeltPlugin/belt_wall_enabled", False)
         self._preferences.addPreference("BeltPlugin/belt_wall_speed", 0)
-        self._preferences.addPreference("BeltPlugin/belt_wall_flow", 0)
+        self._preferences.addPreference("BeltPlugin/belt_wall_flow", 1)
         
         self._preferences.addPreference("BeltPlugin/z_offset_gap", 0.25)
 

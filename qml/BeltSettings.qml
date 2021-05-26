@@ -255,7 +255,7 @@ UM.Dialog
             visible: onBeltPlugin.checked && onAdjustBeltWall.checked
             Row {
                 Label {
-                    text: "Belt wall speed[mm/s] : "
+                    text: "Belt wall speed[mm/m] : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 TextField{
@@ -273,7 +273,7 @@ UM.Dialog
             visible: onBeltPlugin.checked && onAdjustBeltWall.checked
             Row {
                 Label {
-                    text: "Belt wall flow[%] : "
+                    text: "Belt wall flow : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 TextField{
