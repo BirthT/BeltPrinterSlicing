@@ -1,5 +1,6 @@
 # Copyright (c) 2021 BirthT,llc.
 # This plugin is released under the terms of the LGPLv3 or higher.
+from cura.CuraApplication import CuraApplication
 
 from UM.Logger import Logger
 from UM.Backend.Backend import BackendState
@@ -40,7 +41,8 @@ class CuraEngineBackendPatches():
             self._backend._scene.gcode_dict = {} #type: ignore #Because we are creating the missing attribute here.
 
         # see if we really have to slice
-        active_build_plate = self._backend._application.getMultiBuildPlateModel().activeBuildPlate
+        application = CuraApplication.getInstance()
+        active_build_plate = application.getMultiBuildPlateModel().activeBuildPlate
         build_plate_to_be_sliced = self._backend._build_plates_to_be_sliced.pop(0)
         Logger.log("d", "Going to slice build plate [%s]!" % build_plate_to_be_sliced)
         num_objects = self._backend._numObjectsPerBuildPlate()
@@ -55,8 +57,8 @@ class CuraEngineBackendPatches():
                 self._backend.slice()
             return
 
-        if self._backend._application.getPrintInformation() and build_plate_to_be_sliced == active_build_plate:
-            self._backend._application.getPrintInformation().setToZeroPrintInformation(build_plate_to_be_sliced)
+        if application.getPrintInformation() and build_plate_to_be_sliced == active_build_plate:
+            application.getPrintInformation().setToZeroPrintInformation(build_plate_to_be_sliced)
 
         if self._backend._process is None: # type: ignore
             self._backend._createSocket()
