@@ -15,6 +15,7 @@ from cura.Scene.BlockSlicingDecorator import BlockSlicingDecorator
 
 from cura.Arranging.Arrange import Arrange
 from cura.Arranging.ShapeArray import ShapeArray
+from cura.Arranging.ArrangeObjectsJob import ArrangeObjectsJob
 
 from UM.Logger import Logger
 
