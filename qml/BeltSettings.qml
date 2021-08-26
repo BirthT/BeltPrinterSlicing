@@ -7,6 +7,7 @@ import UM 1.3 as UM
 import Cura 1.0 as Cura
 
 
+
 UM.Dialog
 {
     id: base
@@ -18,7 +19,7 @@ UM.Dialog
     width: minimumWidth
     height: minimumHeight
 
-    property variant catalog: UM.I18nCatalog { name: "cura" }
+    property variant catalog: UM.I18nCatalog { name: "belt_printer_slicing" }
 
     function boolCheck(value) //Hack to ensure a good match between python and qml.
     {
@@ -49,7 +50,7 @@ UM.Dialog
 
             Row {
                 Label {
-                    text: "BeltPlugin : "
+                    text: catalog.i18nc("@beltplugin:enable","BeltPlugin") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 CheckBox
@@ -68,7 +69,7 @@ UM.Dialog
             visible: onBeltPlugin.checked
             Row {
                 Label {
-                    text: "Gantry angle[deg] : "
+                    text: catalog.i18nc("@beltplugin:gantry_angle","Gantry angle[deg]") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 TextField{
@@ -87,7 +88,7 @@ UM.Dialog
             visible: onBeltPlugin.checked
             Row {
                 Label {
-                    text: "Copies : "
+                    text: catalog.i18nc("@beltplugin:copies","Copies") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 TextField{
@@ -106,7 +107,7 @@ UM.Dialog
             visible: onBeltPlugin.checked && (parseInt(repetitionsInput.text) > 1)
             Row {
                 Label {
-                    text: "Repetitions distance[mm] : "
+                    text: catalog.i18nc("@beltplugin:repetitions_distance","Repetitions distance[mm]") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 TextField{
@@ -127,7 +128,7 @@ UM.Dialog
             visible: onBeltPlugin.checked
             Row {
                 Label {
-                    text: "Print Raft : "
+                    text: catalog.i18nc("@beltplugin:print_raft","Print Raft") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 CheckBox
@@ -145,7 +146,7 @@ UM.Dialog
             visible: onBeltPlugin.checked && onPrintRaft.checked
             Row {
                 Label {
-                    text: "Raft margin[mm] : "
+                    text: catalog.i18nc("@beltplugin:raft_margin","Raft margin[mm]") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 TextField{
@@ -163,7 +164,7 @@ UM.Dialog
             visible: onBeltPlugin.checked && onPrintRaft.checked
             Row {
                 Label {
-                    text: "Raft thickness[mm] : "
+                    text: catalog.i18nc("@beltplugin:raft_thickness", "Raft thickness[mm]") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 TextField{
@@ -181,7 +182,7 @@ UM.Dialog
             visible: onBeltPlugin.checked && onPrintRaft.checked
             Row {
                 Label {
-                    text: "Raft gap[mm] : "
+                    text: catalog.i18nc("@beltplugin:raft_gap","Raft gap[mm]") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 TextField{
@@ -199,7 +200,7 @@ UM.Dialog
             visible: onBeltPlugin.checked && onPrintRaft.checked
             Row {
                 Label {
-                    text: "Raft speed[mm/s] : "
+                    text: catalog.i18nc("@beltplugin:raft_speed","Raft speed[mm/s]") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 TextField{
@@ -209,6 +210,7 @@ UM.Dialog
                 }
             }
         }
+        /*
         UM.TooltipArea
         {
             width: childrenRect.width
@@ -217,7 +219,7 @@ UM.Dialog
             visible: onBeltPlugin.checked && onPrintRaft.checked
             Row {
                 Label {
-                    text: "Raft flow[%] : "
+                    text: catalog.i18nc("@beltplugin:raft_flow", "Raft flow[%]") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 TextField{
@@ -227,6 +229,7 @@ UM.Dialog
                 }
             }
         }
+        */
 
         //Adjust Belt Wall
         UM.TooltipArea
@@ -237,7 +240,7 @@ UM.Dialog
             visible: onBeltPlugin.checked
             Row {
                 Label {
-                    text: "Adjust Belt Wall : "
+                    text: catalog.i18nc("@beltplugin:adjust_belt_wall","Adjust Belt Wall") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 CheckBox
@@ -255,12 +258,12 @@ UM.Dialog
             visible: onBeltPlugin.checked && onAdjustBeltWall.checked
             Row {
                 Label {
-                    text: "Belt wall speed[mm/m] : "
+                    text: catalog.i18nc("@beltplugin:belt_wall_speed", "Belt wall speed[mm/s]") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 TextField{
                     id:beltWallSpeedInput
-                    text: UM.Preferences.getValue("BeltPlugin/belt_wall_speed")
+                    text: UM.Preferences.getValue("BeltPlugin/belt_wall_speed") / 60.0
                     validator: RegExpValidator { regExp : /[0-9]+\.[0-9]+/ }
                 }
             }
@@ -273,12 +276,12 @@ UM.Dialog
             visible: onBeltPlugin.checked && onAdjustBeltWall.checked
             Row {
                 Label {
-                    text: "Belt wall flow : "
+                    text: catalog.i18nc("@beltplugin:belt_wall_flow","Belt wall flow[%]") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 TextField{
                     id:beltWallFlowInput
-                    text: UM.Preferences.getValue("BeltPlugin/belt_wall_flow")
+                    text: UM.Preferences.getValue("BeltPlugin/belt_wall_flow") * 100.0
                     validator: RegExpValidator { regExp : /[0-9]+\.[0-9]+/ }
                 }
             }
@@ -293,7 +296,7 @@ UM.Dialog
             visible: onBeltPlugin.checked
             Row {
                 Label {
-                    text: "Belt offset[mm] : "
+                    text: catalog.i18nc("@beltplugin:belt_offset","Belt offset[mm]") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 TextField{
@@ -305,6 +308,7 @@ UM.Dialog
         }
 
         //secondary fan
+        /*
         UM.TooltipArea
         {
             width: childrenRect.width
@@ -313,7 +317,7 @@ UM.Dialog
             visible: onBeltPlugin.checked
             Row {
                 Label {
-                    text: "Enable Secondary Print Fans : "
+                    text: catalog.i18nc("@beltplugin:enable_secondary_print_fans", "Enable Secondary Print Fans") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 CheckBox
@@ -331,7 +335,7 @@ UM.Dialog
             visible: onBeltPlugin.checked && onSecondaryFans.checked
             Row {
                 Label {
-                    text: "Secondary Print Fan Speed[%] : "
+                    text: catalog.i18nc("@beltplugin:secondary_print_fan_speed","Secondary Print Fan Speed[%]") + " : "
                     anchors.verticalCenter : parent.verticalCenter
                 }
                 TextField{
@@ -341,6 +345,7 @@ UM.Dialog
                 }
             }
         }
+        */
 
         
     }
@@ -364,19 +369,19 @@ UM.Dialog
                 UM.Preferences.setValue("BeltPlugin/raft_thickness", parseFloat(raftThicknessInput.text));
                 UM.Preferences.setValue("BeltPlugin/raft_gap", parseFloat(raftGapInput.text));
                 UM.Preferences.setValue("BeltPlugin/raft_speed", parseFloat(raftSpeedInput.text));
-                UM.Preferences.setValue("BeltPlugin/raft_flow", parseFloat(raftFlowInput.text));
+                //UM.Preferences.setValue("BeltPlugin/raft_flow", parseFloat(raftFlowInput.text));
 
                 //Belt wall settings
                 UM.Preferences.setValue("BeltPlugin/belt_wall_enabled", onAdjustBeltWall.checked);
-                UM.Preferences.setValue("BeltPlugin/belt_wall_speed", parseFloat(beltWallSpeedInput.text));
-                UM.Preferences.setValue("BeltPlugin/belt_wall_flow", parseFloat(beltWallFlowInput.text));
+                UM.Preferences.setValue("BeltPlugin/belt_wall_speed", (parseFloat(beltWallSpeedInput.text) * 60));
+                UM.Preferences.setValue("BeltPlugin/belt_wall_flow", (parseFloat(beltWallFlowInput.text) / 100.0));
 
                 //Belt z offset
                 UM.Preferences.setValue("BeltPlugin/z_offset_gap", parseFloat(beltOffsetInput.text));
 
                 //Secondary Fans Settings
-                UM.Preferences.setValue("BeltPlugin/secondary_fans_enabled", onSecondaryFans.checked);
-                UM.Preferences.setValue("BeltPlugin/secondary_fans_speed", parseFloat(secondaryFansSpeedInput.text));
+                //UM.Preferences.setValue("BeltPlugin/secondary_fans_enabled", onSecondaryFans.checked);
+                //UM.Preferences.setValue("BeltPlugin/secondary_fans_speed", parseFloat(secondaryFansSpeedInput.text));
 
                 manager.resetSlice();
                 base.reject();
