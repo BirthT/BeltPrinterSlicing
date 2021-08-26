@@ -416,7 +416,7 @@ class StartSliceJob(Job):
             if self._preferences.getValue("BeltPlugin/raft"):
                 raft_offset = self._preferences.getValue("BeltPlugin/raft_thickness")
                 raft_speed = self._preferences.getValue("BeltPlugin/raft_speed")
-                raft_flow = self._preferences.getValue("BeltPlugin/raft_flow") * math.sin(gantry_angle)
+                #raft_flow = self._preferences.getValue("BeltPlugin/raft_flow") * math.sin(gantry_angle)
 
             adhesion_extruder_nr = stack.getProperty("adhesion_extruder_nr", "value")
             support_extruder_nr = stack.getProperty("support_extruder_nr", "value")
