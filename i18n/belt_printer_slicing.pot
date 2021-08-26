@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the belt_printer_slicing package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: belt_printer_slicing\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-27 04:26+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: qml//BeltSettings.qml:15 qml//BeltSettings.qml:15
+msgctxt "@title:window"
+msgid "BirthT Settings"
+msgstr ""
+
+#: qml//BeltSettings.qml:53 qml//BeltSettings.qml:53
+msgctxt "@beltplugin:enable"
+msgid "BeltPlugin"
+msgstr ""
+
+#: qml//BeltSettings.qml:72 qml//BeltSettings.qml:72
+msgctxt "@beltplugin:gantry_angle"
+msgid "Gantry angle[deg]"
+msgstr ""
+
+#: qml//BeltSettings.qml:91 qml//BeltSettings.qml:91
+msgctxt "@beltplugin:copies"
+msgid "Copies"
+msgstr ""
+
+#: qml//BeltSettings.qml:353 qml//BeltSettings.qml:357
+msgctxt "@action:button"
+msgid "Save"
+msgstr ""
+
+#: qml//BeltSettings.qml:389 qml//BeltSettings.qml:393
+msgctxt "@action:button"
+msgid "Close"
+msgstr ""
+
+#: qml//BeltSettings.qml:110 qml//BeltSettings.qml:110
+msgctxt "@beltplugin:repetitions_distance"
+msgid "Repetitions distance[mm]"
+msgstr ""
+
+#: qml//BeltSettings.qml:131 qml//BeltSettings.qml:131
+msgctxt "@beltplugin:print_raft"
+msgid "Print Raft"
+msgstr ""
+
+#: qml//BeltSettings.qml:149 qml//BeltSettings.qml:149
+msgctxt "@beltplugin:raft_margin"
+msgid "Raft margin[mm]"
+msgstr ""
+
+#: qml//BeltSettings.qml:167 qml//BeltSettings.qml:167
+msgctxt "@beltplugin:raft_thickness"
+msgid "Raft thickness[mm]"
+msgstr ""
+
+#: qml//BeltSettings.qml:185 qml//BeltSettings.qml:185
+msgctxt "@beltplugin:raft_gap"
+msgid "Raft gap[mm]"
+msgstr ""
+
+#: qml//BeltSettings.qml:203 qml//BeltSettings.qml:203
+msgctxt "@beltplugin:raft_speed"
+msgid "Raft speed[mm/s]"
+msgstr ""
+
+#: qml//BeltSettings.qml:221
+msgctxt "@beltplugin:raft_flow"
+msgid "Raft flow[%]"
+msgstr ""
+
+#: qml//BeltSettings.qml:241 qml//BeltSettings.qml:243
+msgctxt "@beltplugin:adjust_belt_wall"
+msgid "Adjust Belt Wall"
+msgstr ""
+
+#: qml//BeltSettings.qml:259
+msgctxt "@beltplugin:belt_wall_speed"
+msgid "Belt wall speed[mm/m]"
+msgstr ""
+
+#: qml//BeltSettings.qml:277
+msgctxt "@beltplugin:belt_wall_flow"
+msgid "Belt wall flow"
+msgstr ""
+
+#: qml//BeltSettings.qml:297 qml//BeltSettings.qml:299
+msgctxt "@beltplugin:belt_offset"
+msgid "Belt offset[mm]"
+msgstr ""
+
+#: qml//BeltSettings.qml:317
+msgctxt "@beltplugin:enable_secondary_print_fans"
+msgid "Enable Secondary Print Fans"
+msgstr ""
+
+#: qml//BeltSettings.qml:335
+msgctxt "@beltplugin:secondary_print_fan_speed"
+msgid "Secondary Print Fan Speed[%]"
+msgstr ""
+
+#: qml//BeltSettings.qml:261
+msgctxt "@beltplugin:belt_wall_speed"
+msgid "Belt wall speed[mm/s]"
+msgstr ""
+
+#: qml//BeltSettings.qml:279
+msgctxt "@beltplugin:belt_wall_flow"
+msgid "Belt wall flow[%]"
+msgstr ""

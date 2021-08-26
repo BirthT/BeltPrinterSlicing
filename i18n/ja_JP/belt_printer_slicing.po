@@ -1,0 +1,115 @@
+# Japanese translations for belt_printer_slicing package
+# belt_printer_slicing �ѥå��������Ф������.
+# Copyright (C) 2021 THE belt_printer_slicing'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the belt_printer_slicing package.
+# Kobayashi Rui <birtht.3dprinter@gmail.com>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: belt_printer_slicing\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-27 04:26+0900\n"
+"PO-Revision-Date: 2021-08-26 16:18+0900\n"
+"Last-Translator: Kobayashi Rui <birtht.3dprinter@gmail.com>\n"
+"Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: qml//BeltSettings.qml:15
+msgctxt "@title:window"
+msgid "BirthT Settings"
+msgstr "BirthT 設定"
+
+#: qml//BeltSettings.qml:53
+msgctxt "@beltplugin:enable"
+msgid "BeltPlugin"
+msgstr "ベルトプラグイン"
+
+#: qml//BeltSettings.qml:72
+msgctxt "@beltplugin:gantry_angle"
+msgid "Gantry angle[deg]"
+msgstr "ガントリー角度[deg]"
+
+#: qml//BeltSettings.qml:91
+msgctxt "@beltplugin:copies"
+msgid "Copies"
+msgstr "コピー数"
+
+#: qml//BeltSettings.qml:353 qml//BeltSettings.qml:357
+msgctxt "@action:button"
+msgid "Save"
+msgstr "設定保存"
+
+#: qml//BeltSettings.qml:389 qml//BeltSettings.qml:393
+msgctxt "@action:button"
+msgid "Close"
+msgstr "閉じる"
+
+#: qml//BeltSettings.qml:110
+msgctxt "@beltplugin:repetitions_distance"
+msgid "Repetitions distance[mm]"
+msgstr "繰り返し時の造形物間距離"
+
+#: qml//BeltSettings.qml:131
+msgctxt "@beltplugin:print_raft"
+msgid "Print Raft"
+msgstr "ラフト有効化"
+
+#: qml//BeltSettings.qml:149
+msgctxt "@beltplugin:raft_margin"
+msgid "Raft margin[mm]"
+msgstr "余分なラフト幅[mm]"
+
+#: qml//BeltSettings.qml:167
+msgctxt "@beltplugin:raft_thickness"
+msgid "Raft thickness[mm]"
+msgstr "ラフト厚さ[mm]"
+
+#: qml//BeltSettings.qml:185
+msgctxt "@beltplugin:raft_gap"
+msgid "Raft gap[mm]"
+msgstr "ラフトと造形物の隙間[mm]"
+
+#: qml//BeltSettings.qml:203
+msgctxt "@beltplugin:raft_speed"
+msgid "Raft speed[mm/s]"
+msgstr "ラフト速度[mm/s]"
+
+#: qml//BeltSettings.qml:221
+msgctxt "@beltplugin:raft_flow"
+msgid "Raft flow[%]"
+msgstr "ラフト流量"
+
+#: qml//BeltSettings.qml:241 qml//BeltSettings.qml:243
+msgctxt "@beltplugin:adjust_belt_wall"
+msgid "Adjust Belt Wall"
+msgstr "ベルト面の設定有効化"
+
+#: qml//BeltSettings.qml:261
+msgctxt "@beltplugin:belt_wall_speed"
+msgid "Belt wall speed[mm/s]"
+msgstr "ベルト面速度[mm/s]"
+
+#: qml//BeltSettings.qml:279
+msgctxt "@beltplugin:belt_wall_flow"
+msgid "Belt wall flow[%]"
+msgstr "ベルト面流量[%]"
+
+#: qml//BeltSettings.qml:297 qml//BeltSettings.qml:299
+msgctxt "@beltplugin:belt_offset"
+msgid "Belt offset[mm]"
+msgstr "ベルト面との距離"
+
+#: qml//BeltSettings.qml:317
+msgctxt "@beltplugin:enable_secondary_print_fans"
+msgid "Enable Secondary Print Fans"
+msgstr ""
+
+#: qml//BeltSettings.qml:335
+msgctxt "@beltplugin:secondary_print_fan_speed"
+msgid "Secondary Print Fan Speed[%]"
+msgstr ""
+
