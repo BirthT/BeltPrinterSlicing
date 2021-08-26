@@ -12,8 +12,10 @@ from UM.Version import Version
 from cura.Settings.CuraContainerStack import _ContainerIndexes as ContainerIndexes
 from UM.i18n import i18nCatalog
 #from UM.FlameProfiler import pyqtSlot
+
 from PyQt5.QtCore import QObject, QUrl, pyqtProperty, pyqtSignal, pyqtSlot
-i18n_catalog = i18nCatalog("BeltPlugin")
+
+
 
 from . import BeltDecorator
 
@@ -33,6 +35,13 @@ import os.path
 import re
 import json
 
+from UM.Resources import Resources
+Resources.addSearchPath(
+    os.path.join(os.path.abspath(
+        os.path.dirname(__file__))))  # Plugin translation file import
+
+i18n_catalog = i18nCatalog("belt_printer_slicing")
+
 class BeltPlugin(QObject,Extension):
     def __init__(self):
         super().__init__()
@@ -50,9 +59,9 @@ class BeltPlugin(QObject,Extension):
         #Belt Plugin environment variable#############################
         self._preferences.addPreference("BeltPlugin/on_plugin", False) #Belt Plugin ON:True,OFF:False
 
-        self._preferences.addPreference("BeltPlugin/gantry_angle", 35) 
+        self._preferences.addPreference("BeltPlugin/gantry_angle", 45) 
 
-        self._preferences.addPreference("BeltPlugin/support_gantry_angle_bias", 35) 
+        self._preferences.addPreference("BeltPlugin/support_gantry_angle_bias", 45) 
         self._preferences.addPreference("BeltPlugin/support_minimum_island_area", 3.0) 
 
         self._preferences.addPreference("BeltPlugin/repetitions", 1) 
@@ -67,12 +76,12 @@ class BeltPlugin(QObject,Extension):
         self._preferences.addPreference("BeltPlugin/raft_thickness", 0.8)
         self._preferences.addPreference("BeltPlugin/raft_gap", 0.5)
         self._preferences.addPreference("BeltPlugin/raft_speed", 18.0)
-        self._preferences.addPreference("BeltPlugin/raft_flow", 100)
+        self._preferences.addPreference("BeltPlugin/raft_flow", 1.0)
 
 
         self._preferences.addPreference("BeltPlugin/belt_wall_enabled", False)
-        self._preferences.addPreference("BeltPlugin/belt_wall_speed", 0)
-        self._preferences.addPreference("BeltPlugin/belt_wall_flow", 1)
+        self._preferences.addPreference("BeltPlugin/belt_wall_speed", 600.0)
+        self._preferences.addPreference("BeltPlugin/belt_wall_flow", 1.0)
         
         self._preferences.addPreference("BeltPlugin/z_offset_gap", 0.25)
 
