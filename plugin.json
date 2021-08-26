@@ -3,5 +3,6 @@
     "author": "BirthT,llc.",
     "version": "0.9.0",
     "api": 7,
+    "supported_sdk_versions": ["6.0.0", "7.0.0", "7.3.0", "7.4.0", "7.5.0", "7.6.0"],
     "description": "This plug-in do the slicing of the belt printer."
 }
