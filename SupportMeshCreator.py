@@ -3,8 +3,9 @@
 
 import numpy
 import math
-from . import trimesh
+#from . import trimesh
 
+from UM.Platform import Platform
 from UM.Extension import Extension
 from UM.Application import Application
 from UM.Logger import Logger
@@ -14,6 +15,12 @@ from UM.Math.Vector import Vector
 
 from UM.i18n import i18nCatalog
 catalog = i18nCatalog("cura")
+
+if(Platform.isWindows()):
+    from .ThirdParty.win import trimesh
+elif(Platform.isOSX()):
+    from .ThirdParty.mac import trimesh
+
 
 class SupportMeshCreator():
     def __init__(self,
