@@ -1,6 +1,3 @@
-# Copyright (c) 2021 BirthT,llc.
-# This plugin is released under the terms of the LGPLv3 or higher.
-
 from UM.Math.Vector import Vector
 from UM.Scene.Iterator.DepthFirstIterator import DepthFirstIterator
 from UM.Scene.Selection import Selection

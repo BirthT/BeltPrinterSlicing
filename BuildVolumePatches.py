@@ -1,4 +1,3 @@
-# Copyright (c) 2021 BirthT,llc.
 # This plugin is released under the terms of the LGPLv3 or higher.
 
 from UM.Application import Application

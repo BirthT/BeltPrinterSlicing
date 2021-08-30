@@ -1,4 +1,4 @@
-# Copyright (c) 2021 BirthT,llc.
+# Copyright (c) 2017 fieldOfView
 # This plugin is released under the terms of the LGPLv3 or higher.
 
 from UM.Extension import Extension

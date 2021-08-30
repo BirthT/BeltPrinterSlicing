@@ -1,5 +1,5 @@
-# Copyright (c) 2021 BirthT,llc.
-# This plugin is released under the terms of the LGPLv3 or higher.
+# Copyright (c) 2018 Ultimaker B.V.
+# Cura is released under the terms of the LGPLv3 or higher.
 
 import numpy
 from string import Formatter
