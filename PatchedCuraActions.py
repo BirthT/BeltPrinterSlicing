@@ -1,6 +1,3 @@
-# Copyright (c) 2021 BirthT,llc.
-# This plugin is released under the terms of the LGPLv3 or higher.
-
 from UM.FlameProfiler import pyqtSlot
 from UM.Scene.Selection import Selection
 

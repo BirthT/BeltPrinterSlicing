@@ -1,4 +1,4 @@
-# Copyright (c) 2021 BirthT,llc.
+# Copyright (c) 2017 fieldOfView
 # This plugin is released under the terms of the LGPLv3 or higher.
 
 from UM.Extension import Extension
@@ -23,7 +23,6 @@ from . import CuraApplicationPatches
 from . import PatchedCuraActions
 from . import BuildVolumePatches
 from . import CuraEngineBackendPatches
-from . import USBPrinterOutputDevicePatches
 from . import FlavorParserPatches
 
 from UM.Backend.Backend import BackendState
@@ -140,19 +139,6 @@ class BeltPlugin(QObject,Extension):
         if gcode_reader_plugin:
             for (parser_name, parser_object) in gcode_reader_plugin._flavor_readers_dict.items():
                 self._flavor_parser_patches[parser_name] = FlavorParserPatches.FlavorParserPatches(parser_object)
-
-    def _onOutputDevicesChanged(self):
-        if not self._global_container_stack:
-            return
-
-
-        if not self._preferences.getValue("BeltPlugin/on_plugin"):
-            return
-
-        output_device_manager = self._application.getOutputDeviceManager()
-        for output_device in output_device_manager.getOutputDevices():
-            if "USBPrinterOutputDevice" in str(output_device):
-                self._output_device_patches[output_device] = USBPrinterOutputDevicePatches.USBPrinterOutputDevicePatches(output_device)
 
     def _onSlicingStarted(self):
         self._scene_root.callDecoration("calculateTransformData")
