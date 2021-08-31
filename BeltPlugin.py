@@ -115,9 +115,6 @@ class BeltPlugin(QObject,Extension):
         # Hide nozzle in simulation view
         self._application.getController().activeViewChanged.connect(self._onActiveViewChanged)
 
-        # Disable USB printing output device
-        self._application.getOutputDeviceManager().outputDevicesChanged.connect(self._onOutputDevicesChanged)
-
     def _onEngineCreated(self):
 
         # Apply patches
