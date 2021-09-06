@@ -103,13 +103,14 @@ class BeltPlugin(QObject,Extension):
         self._application.pluginsLoaded.connect(self._onPluginsLoaded)
 
         # disable update checker plugin (because it checks the wrong version)
-        plugin_registry = PluginRegistry.getInstance()
-        if "UpdateChecker" not in plugin_registry._disabled_plugins:
-            Logger.log("d", "Disabling Update Checker plugin")
-            plugin_registry._disabled_plugins.append("UpdateChecker")
+        #plugin_registry = PluginRegistry.getInstance()
+        #if "UpdateChecker" not in plugin_registry._disabled_plugins:
+        #    Logger.log("d", "Disabling Update Checker plugin")
+        #    plugin_registry._disabled_plugins.append("UpdateChecker")
 
     def _onPluginsLoaded(self):
         # make sure the we connect to engineCreatedSignal later than PrepareStage does, so we can substitute our own sidebar
+        Logger.log("d", "Load belt plugin")
         self._application.engineCreatedSignal.connect(self._onEngineCreated)
 
         # Hide nozzle in simulation view
