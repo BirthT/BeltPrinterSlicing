@@ -5,7 +5,13 @@
 
 機能の要望やバグ報告は[Twitter](https://twitter.com/BirthT_3D)かissueにお願いします.
 
-## Installation
+## Installation (最新バージョン)
+1. [BeltPrinterSlicing.zip](https://github.com/BirthT/BeltPrinterSlicing/releases/download/v0.9.3/BeltPrinterSlicing.zip)をダウンロード
+2. BeltPrinterSlicing.zipを解答
+3. (Windows)解凍したフォルダ(直下に`__init__.py`がある)を`[Cura installation folder]/plugins/`にコピーする
+3. (Mac)解凍したフォルダ(直下に`__init__.py`がある)を`~/Library/Application Support/cura/[YOUR CURA VERSION]/plugins/`にコピーする
+
+## Installation (Old Version)
 ### Windows
 1. [BeltPrinterSlicing_win.zip](https://github.com/BirthT/BeltPrinterSlicing/releases/download/0.9.0/BeltPrinterSlicing_win.zip)をダウンロード
 2. BeltPrinterSlicing_win.zipを解凍
@@ -15,6 +21,7 @@
 1. [BeltPrinterSlicing_mac.zip](https://github.com/BirthT/BeltPrinterSlicing/releases/download/0.9.0/BeltPrinterSlicing_mac.zip)をダウンロード
 2. BeltPrinterSlicing_mac.zipを解凍
 3. 解凍したフォルダ(直下に`__init__.py`がある)を`~/Library/Application Support/cura/[YOUR CURA VERSION]/plugins/`にコピーする
+
 
 ---
 # BeltPrinterSlicing(Beta) - English
