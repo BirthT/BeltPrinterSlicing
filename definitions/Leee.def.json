@@ -1,0 +1,53 @@
+{
+    "version": 2,
+    "name": "Leee",
+    "inherits": "fdmprinter",
+    "metadata":{
+        "author": "Rui Kobayashi",
+        "manufacturer": "BirthT",
+        "visible": true,
+        "file_formats": "text/x-gcode",
+        "has_materials": true,
+        "machine_extruder_trains": 
+        {
+            "0": "Leee_extruder"
+        },
+        "first_start_actions": ["MachineSettingsAction"]
+    },
+    "overrides": 
+    {
+        "machine_name": { "default_value": "Leee" },
+        "machine_heated_bed": { "default_value": true },
+        "machine_extruder_count": { "default_value": 1 },
+        "support_type":{"options":{"everywhere":"Everywhere"}},
+        "adhesion_type":{"options":{"none": "None"}, "default_value": "none"},
+        "machine_width": { "default_value": 210.0 },
+        "machine_depth": { "default_value": 99999 },
+        "machine_height": { "default_value": 200.0 },
+        "gantry_height": { "value": 200.0 },
+        "wall_thickness": { "value": "1.2" },
+        "material_bed_temperature":{ "value": "50"},
+        "material_bed_temperature_layer_0":{ "value": "50"},
+        "speed_print":{"default_value":50.0},
+        "speed_infill":{"default_value":40.0},
+        "speed_wall":{"default_value":20.0},
+        "speed_travel":{"default_value":60.0},
+        "speed_layer_0":{"default_value":20.0},
+        "speed_print_layer_0":{"default_value":20.0},
+        "support_z_distance":{"default_value":0.5},
+        "support_top_distance":{"default_value":0.5},
+        "support_bottom_distance":{"default_value":0.5},
+        "support_xy_distance":{"default_value":0.5},
+        "machine_gcode_flavor": { "default_value": "Marlin" },
+        "machine_start_gcode":
+        {
+            "default_value":"G28 \nG92 Z0 \nG92 E0 \nG1 X50 F2000 \nG1 X150 E10 F800 \nG1 Z1 F800 \nG1 X50 E20 F800 \nG1 Z10 F800 \nG90               ; Set to Absolute Positioning \nM82               ; Set extruder to absolute mode \nG21               ; Metric values \nG92 Z0 E0   ; Set all axis to 0 \n;˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅ - copy from here / paste codes just under here - ˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅ \nM107              ; Start with the fan off"
+        },
+        "machine_end_gcode":
+        {
+            "default_value":"M104 S0 \nM140 S0 \nG92 Z0 \nG1 Z10 F1000 \nG92 E1 \nG1 E-1 F300 \nM84"
+        }
+        
+    }
+
+}
