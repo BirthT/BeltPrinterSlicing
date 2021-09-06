@@ -275,9 +275,10 @@ class StartSliceJob(Job):
             stack_id = stack.getId()
 
              # Adapt layer_height and material_flow for a slanted gantry
-            gantry_angle = self._scene.getRoot().callDecoration("getGantryAngle")
-            #gantry_angle = float(self._preferences.getValue("BeltPlugin/gantry_angle"))
-            if gantry_angle: # not 0 or None
+            #gantry_angle = self._scene.getRoot().callDecoration("getGantryAngle")
+            gantry_angle = float(self._preferences.getValue("BeltPlugin/gantry_angle"))
+            on_belt_plugin = self._preferences.getValue("BeltPlugin/on_plugin")
+            if gantry_angle and on_belt_plugin: # not 0 or None
                 # Act on a copy of the stack, so these changes don't cause a reslice
                 _stack = CuraContainerStack(stack_id + "_temp")
                 for index, container in enumerate(stack.getContainers()):
@@ -307,7 +308,7 @@ class StartSliceJob(Job):
             # then CuraEngine can slice with the wrong settings. This I think should be fixed in CuraEngine as well.
             extruder_stack_list = sorted(list(global_stack.extruders.items()), key = lambda item: int(item[0]))
             for _, extruder_stack in extruder_stack_list:
-                if gantry_angle: # not 0 or None
+                if gantry_angle and on_belt_plugin: # not 0 or None
                     # Act on a copy of the stack, so these changes don't cause a reslice
                     _extruder_stack = CuraContainerStack(extruder_stack.getId() + "_temp")
                     for index, container in enumerate(extruder_stack.getContainers()):
@@ -326,7 +327,7 @@ class StartSliceJob(Job):
             bottom_cutting_meshes = []
             raft_meshes = []
             support_meshes = []
-            if gantry_angle: # not 0 or None
+            if gantry_angle and on_belt_plugin: # not 0 or None
                 for group in filtered_object_groups:
                     added_meshes = []
                     for object in group:
