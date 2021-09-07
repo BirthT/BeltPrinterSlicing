@@ -17,6 +17,8 @@
     "overrides": 
     {
         "machine_name": { "default_value": "Leee" },
+        "machine_head_with_fans_polygon": {"default_value":[[0,0],[0,0],[0,0],[0,0]]},
+        "machine_use_extruder_offset_to_offset_coords": {"default_value": false},
         "machine_heated_bed": { "default_value": true },
         "machine_extruder_count": { "default_value": 1 },
         "support_type":{"options":{"everywhere":"Everywhere"}},
