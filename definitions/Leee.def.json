@@ -43,7 +43,7 @@
         "machine_gcode_flavor": { "default_value": "Marlin" },
         "machine_start_gcode":
         {
-            "default_value":"G28 \nG92 Z0 \nG92 E0 \nG1 X50 F2000 \nG1 X150 E10 F800 \nG1 Z1 F800 \nG1 X50 E20 F800 \nG1 Z10 F800 \nG90               ; Set to Absolute Positioning \nM82               ; Set extruder to absolute mode \nG21               ; Metric values \nG92 Z0 E0   ; Set all axis to 0 \n;˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅ - copy from here / paste codes just under here - ˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅ \nM107              ; Start with the fan off"
+            "default_value":"G28 \nG92 Z0 \nG92 E0 \nG90               ; Set to Absolute Positioning \nG1 X50 F2000 \nG1 X150 E10 F800 \nG1 Z1 F800 \nG1 X50 E20 F800 \nG1 Z10 F800 \nM82               ; Set extruder to absolute mode \nG21               ; Metric values \nG92 Z0 E0   ; Set all axis to 0 \n;˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅ - copy from here / paste codes just under here - ˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅ \nM107              ; Start with the fan off"
         },
         "machine_end_gcode":
         {
