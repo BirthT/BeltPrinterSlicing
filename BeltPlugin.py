@@ -233,11 +233,11 @@ class BeltPlugin(QObject,Extension):
                     gcode_list[layer_number] = re.sub(search_regex, lambda m: "M106 P1 S%d\nM106 S%s" % (int(min(255, float(m.group(1)) * secondary_fans_speed)), m.group(1)), layer) #Replace all.
             
             # z_offset change
-            _wall_line_width_0 = global_stack.extruders["0"].getProperty("wall_line_width_0", "value")
-            _xy_offset = global_stack.extruders["0"].getProperty("xy_offset", "value")
+            _wall_line_width_0 = float(global_stack.extruders["0"].getProperty("wall_line_width_0", "value"))
+            _xy_offset = float(global_stack.extruders["0"].getProperty("xy_offset", "value"))
 
             Logger.log("d", "wall_line_width_0: " + str(_wall_line_width_0) + " xy_offset: " + str(_xy_offset))
-            _belt_z_offset_gap = self._preferences.getValue("BeltPlugin/z_offset_gap")
+            _belt_z_offset_gap = float(self._preferences.getValue("BeltPlugin/z_offset_gap"))
             _gantry_angle = float(self._preferences.getValue("BeltPlugin/gantry_angle"))
 
             _belt_z_offset = round( ( _wall_line_width_0 / 2.0) - (_belt_z_offset_gap / math.sin(math.radians(_gantry_angle))) - _xy_offset, 4) 
