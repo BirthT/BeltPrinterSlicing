@@ -79,6 +79,8 @@ class ProcessSlicedLayersJob(Job):
     def run(self):
         Logger.log("d", "Processing new layer for build plate %s..." % self._build_plate_number)
         start_time = time()
+        last_point_hit_wall = False
+  
         view = Application.getInstance().getController().getActiveView()
         if view.getPluginId() == "SimulationView":
             view.resetLayerData()
