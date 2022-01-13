@@ -3,7 +3,9 @@ from UM.Scene.Iterator.DepthFirstIterator import DepthFirstIterator
 from UM.Scene.Selection import Selection
 from UM.Operations.AddSceneNodeOperation import AddSceneNodeOperation
 
-from cura.Scene.CuraSceneNode import CuraSceneNode
+# This creates a circular dependency
+# from cura.Scene.CuraSceneNode import CuraSceneNode
+from cura.CuraApplication import CuraSceneNode
 
 from cura.Scene.BuildPlateDecorator import BuildPlateDecorator
 from cura.Scene.ConvexHullDecorator import ConvexHullDecorator

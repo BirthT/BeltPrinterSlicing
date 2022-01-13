@@ -20,7 +20,8 @@ if(Platform.isWindows()):
     from .ThirdParty.win import trimesh
 elif(Platform.isOSX()):
     from .ThirdParty.mac import trimesh
-
+elif(Platform.isLinux()):
+    from .ThirdParty.linux import trimesh
 
 class SupportMeshCreator():
     def __init__(self,
