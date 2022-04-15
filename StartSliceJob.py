@@ -275,8 +275,7 @@ class StartSliceJob(Job):
             stack_id = stack.getId()
 
              # Adapt layer_height and material_flow for a slanted gantry
-            #gantry_angle = self._scene.getRoot().callDecoration("getGantryAngle")
-            gantry_angle = float(self._preferences.getValue("BeltPlugin/gantry_angle"))
+            gantry_angle = self._scene.getRoot().callDecoration("getGantryAngle")
             on_belt_plugin = self._preferences.getValue("BeltPlugin/on_plugin")
             if gantry_angle and on_belt_plugin: # not 0 or None
                 # Act on a copy of the stack, so these changes don't cause a reslice
