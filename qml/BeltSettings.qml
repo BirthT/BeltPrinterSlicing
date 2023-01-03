@@ -281,7 +281,7 @@ UM.Dialog
                 }
                 TextField{
                     id:beltWallFlowInput
-                    text: UM.Preferences.getValue("BeltPlugin/belt_wall_flow") * 100.0
+                    text: parseFloat(UM.Preferences.getValue("BeltPlugin/belt_wall_flow") * 100.0).toFixed(2)
                     validator: RegExpValidator { regExp : /[0-9]+\.[0-9]+/ }
                 }
             }
